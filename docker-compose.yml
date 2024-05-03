@@ -1,9 +1,11 @@
 services:
   cs2_modded_server:
     image: cs2-modded-server
-    container_name: cs2-modded-server
+    build:
+      context: .
     env_file:
       - .env
+      - stack.env
     volumes:
       - cs2-volume:/home/steam/
       - type: bind
